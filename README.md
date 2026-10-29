@@ -51,11 +51,13 @@
 
 本仓库存放适用于开发 **Flex** 应用程序的最新稳定 **FlexSDK** 版本。
 
-过去，**FlexSDK** 是由 **Adobe** 作为 **Adobe FlashBuilder** 软件的一部分提供的。**FlexSDK** 能够开发以 **Flex** 框架为基础的 **Flex** 企业级应用程序。
+过去，**FlexSDK** 是由 **[Adobe]** 作为 **Adobe FlashBuilder** 软件的一部分提供的。**FlexSDK** 能够开发以 **Flex** 框架为基础的 **Flex** 企业级应用程序。
 
-2012 年，**Flex** 框架被 **Adobe** 捐赠给 **Apache** 开源基金会，并由其负责接手开发，**Adobe** 则完全停止分发包含了 **Flex** 框架的 **FlexSDK**，仅发行不带 **Flex** 框架的纯 **AdobeAirSDK**。如果需要使用 **Flex** 框架，则需要从 **Apache** 处获取并覆盖安装到最新的 **AirSDK** 中来完成 **FlexSDK** 的升级。
+2012 年，**Flex** 框架被 **Adobe** 捐赠给 **[Apache]** 开源基金会，并由其负责接手开发，**Adobe** 则完全停止分发包含了 **Flex** 框架的 **FlexSDK**，仅发行不带 **Flex** 框架的纯 **AdobeAirSDK**。如果需要使用 **Flex** 框架，则需要从 **Apache** 处获取并覆盖安装到最新的 **AirSDK** 中来完成 **FlexSDK** 的升级。
 
 2021 年，**Adobe** 正式宣布 **Flash** 停止维护，旗下的 **AdobeAirSDK** 被 **[Harman]** 收购并更名为 **HarmanAirSDK**，但依旧不提供合并的版本，仍需开发者手动自行合并。
+
+2026 年，**Harman** 旗下的 **HarmanAirSDK** 再次被 **[Wipro]** 收购，原开发团队及下载页迁移到 **Wipro** 名下，其余流程与在 **Harman** 时期一致（未提及是否继续将 **HarmanAirSDK** 更名）。
 
 本仓库则依照前开发人员 **Josh Tynjala** 的教程 （<https://joshblog.net/2024/how-to-install-apache-flex-with-adobe-air-from-harman/>），手动在本地合并了最新的 **Apache Flex** 与当下稳定版本的 **HarmanAirSDK** ，组成了一个完整的 **FlexSDK** 版本。
 
@@ -66,14 +68,14 @@
 ### 环境需求
 
 - **Java 1.8** 或更高版本
-- 下载 [apache-ant-1.10.17-bin.zip] ，解压并配置 **环境变量**（需用到 **ant** 命令）。
-- 下载 [apache-flex-sdk-4.16.1-bin.zip] 。
-- 前往 HarmanAirSDK (<https://airsdk.harman.com/release_notes>) 下载页面，下载合适版本的 HarmanAirSDK ，其文件名应为 **AIRSDK_Flex_Windows.zip**，如果不是此文件名，则说明您下载的 SDK 不允许与 FlexSDK 合并。
+- 下载 [apache-ant-1.10.17-bin.zip] ，解压并配置 **环境变量**（需用到 **ant** 命令）。若下载链接已不可用，可下载仓库内备份。
+- 下载 [apache-flex-sdk-4.16.1-bin.zip] 。若下载链接已不可用，可下载仓库内备份。
+- 前往 HarmanAirSDK (<https://airsdk.wxlift.com/release_notes>) 下载页面，下载合适版本的 HarmanAirSDK ，其文件名应为 **AIRSDK_Flex_Windows.zip**，如果不是此文件名，则说明您下载的 SDK 无法与 FlexSDK 合并。
 - 最后，还需要下载一个安装脚本 [harman-installer.xml]，此脚本由 **Josh Tynjala** 提供。
 
-注：由于 Harman 在 51.2 版本后对外隐藏了 HarmanAirSDK 的下载地址，推行 SDKManager，因此可以使用以下隐藏地址对版本号替换后下载所需的 SDK。
+注：由于 Wipro（原 Harman） 在 51.2 版本后对外隐藏了 HarmanAirSDK 的下载地址，推行 SDKManager，因此可以使用以下隐藏地址对版本号替换后下载所需的 SDK。
 
-`https://airsdk.harman.com/api/versions/{具体版本号（例如：51.0.1.1）}/sdks/AIRSDK_Flex_Windows.zip?license=accepted`
+`https://airsdk.wxlift.com/api/versions/{具体版本号（例如：51.0.1.1）}/sdks/AIRSDK_Flex_Windows.zip?license=accepted`
 
 ### 合并步骤
 
@@ -106,8 +108,12 @@ ant -f harman-installer.xml -Dair.sdk.version=51.0
 [![Twitter:5Dplay](https://img.shields.io/twitter/follow/5Dplay)](https://x.com/5DPLAY) [![BiliBili:死神VS火影吧](https://badgen.net/badge/BiliBili/死神VS火影吧/)](https://space.bilibili.com/1340107883)
 
 [Release]: https://github.com/5DPLAY-Game-Studio/BleachVsNaruto_FlexSDK/releases
+[Adobe]: https://www.adobe.com/
+[Apache]: https://flex.apache.org/
 [Harman]: https://airsdk.harman.com/
+[Wipro]: https://airsdk.wxlift.com
 [apache-ant-1.10.17-bin.zip]: https://dlcdn.apache.org/ant/binaries/apache-ant-1.10.17-bin.zip
 [apache-flex-sdk-4.16.1-bin.zip]: https://dlcdn.apache.org/flex/4.16.1/binaries/apache-flex-sdk-4.16.1-bin.zip
 [harman-installer.xml]: https://raw.githubusercontent.com/joshtynjala/setup-apache-flex-action/master/harman-installer.xml
+
 [GPL-3.0]: https://www.gnu.org/licenses/gpl-3.0.html
